@@ -6,7 +6,9 @@ app = Flask(__name__)
 # Aceita requisições com o método POST.
 # O corpo da requisição deve conter um objeto JSON
 # como o apresentado abaixo:
-# 
+
+#{"codigo":"1"}
+
 @app.route('/teste/1', methods=['POST'])
 def teste_json():
     objeto_json = request.get_json()
@@ -17,7 +19,7 @@ def teste_json():
 
     if codigo == "1":
 
-        Produto = "Sapato a R $99,99"
+        Produto = "Sapato a R$ 99,99"
     elif codigo == "2":
         Produto="Bolsa a R$ 183,89"
     elif codigo == "3":

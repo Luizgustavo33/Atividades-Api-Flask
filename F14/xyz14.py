@@ -6,6 +6,9 @@ app = Flask(__name__)
 # Aceita requisições com o método POST.
 # O corpo da requisição deve conter um objeto JSON
 # como o apresentado abaixo:
+
+#{"X": "5", "Y":"4", "Z":"40"}
+
 # 
 @app.route('/teste/1', methods=['POST'])
 def teste_json():
