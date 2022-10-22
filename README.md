@@ -1,2 +1,3 @@
-Atividades-Api-Flask
-Atividades referente a Disciplina de Sistemas distribuídos, utilizando conceitos de Restful com a linguagem Python (Flask)
+#Atividades-Api-Flask
+
+Atividades referente a UC de Sistemas Distribuídos, utilizando conceitos de Restful com a linguagem Python (Flask)
