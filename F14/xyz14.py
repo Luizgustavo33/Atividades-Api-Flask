@@ -29,10 +29,10 @@ def teste_json():
 
     if (abs(X-Y)<Z and Z<X+Y) and (abs(Y-Z)<X and X<Y+Z) and (abs(Z-X)<Y and Y<Z+X):
         
-        triangulo = "Pode ser um triângulo"
+        resp = "Pode ser um triângulo"
 
     else:
-        triangulo = "Não pode ser um triângulo"
+        resp = "Não pode ser um triângulo"
 
 
 
@@ -44,7 +44,7 @@ def teste_json():
                 <h1>Terceiro valor: {}</h1>
                 <h1>Resultado: {}</h1>
 
-                '''.format(X, Y,Z, triangulo)
+                '''.format(X, Y,Z, resp)
 
 if __name__ == '__main__':
 # Executar app no modo debug (default) na porta 5000 (default):
