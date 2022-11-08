@@ -10,7 +10,7 @@ Alunos = [{'id': 0, 'nome': 'Ana', 'nota': 72.00},
 {'id': 3, 'nome': 'Diego', 'nota': 70.0},
 {'id': 4, 'nome': 'Ester', 'nota': 69.0}]
 
-def aborta_se_o_aluno_não_existe(id):
+def aborta_se_o_aluno_nao_existe(id):
     encontrei = False
     for aluno in Alunos:
 
@@ -29,19 +29,19 @@ class Aluno(Resource):
     
     #http://127.0.0.1:5000/aluno/0
     def get(self, id):
-        aborta_se_o_aluno_não_existe(id)
+        aborta_se_o_aluno_nao_existe(id)
         return Alunos[int(id)]
     
     #http://127.0.0.1:5000/aluno/1
     def delete(self, id):
-        aborta_se_o_aluno_não_existe(id)
+        aborta_se_o_aluno_nao_existe(id)
         del Alunos[int(id)]
         return '', 204, #204: No Content
     
-    #http://127.0.0.1:5000/aluno/1
+    #http://127.0.0.1:5000/aluno/0
     #{ "nome":"CARLINHOS","nota":99.9}
     def put(self, id):
-        aborta_se_o_aluno_não_existe(id)
+        aborta_se_o_aluno_nao_existe(id)
         args = parser.parse_args()
         for aluno in Alunos:
             if aluno['id'] == int(id):
