@@ -49,6 +49,17 @@ class Aluno(Resource):
                 aluno['nome'] = args['nome']
                 aluno['nota'] = args['nota']
                 break
+        return aluno, 200, #200: OK    
+
+    #{"nota":99.9}
+    def patch(self, id):
+        aborta_se_o_aluno_nao_existe(id)
+        args = parser.parse_args()
+        for aluno in Alunos:
+            if aluno['id'] == int(id):
+                aluno['id'] == int(id)
+                aluno['nota'] = args['nota']
+                break
         return aluno, 200, #200: OK
 
 
