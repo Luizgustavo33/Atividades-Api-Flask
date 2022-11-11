@@ -35,6 +35,10 @@ campos_obrigatorios_para_atualizacao = api.model('Atualizaçao dos produtos', {
   'quantidade': fields.Integer(required=True, description='quantidade de produtos'),
   'preco': fields.Float(required=True, description='preco do produto'),
 })
+campos_obrigatorios_para_atualizacao_parcial = api.model('Atualizaçao dos produtos', {
+  'quantidade': fields.Integer(required=True, description='quantidade de produtos'),
+  'preco': fields.Float(required=True, description='preco do produto'),
+})
 campos_obrigatorios_para_insercao = api.model('Inserção de produtos', {
   'id': fields.Integer(required=False, readonly=True,
 description='identificador dos produtos'),
@@ -80,7 +84,7 @@ class produto(Resource):
         return produto, 200, #200: OK
     
     @api.doc(responses={200: 'produto substituído'}) #200: OK
-    @api.expect(campos_obrigatorios_para_atualizacao)
+    @api.expect(campos_obrigatorios_para_atualizacao_parcial)
     def patch(self, id):
         aborta_se_o_produto_nao_existe(id)
         args = parser.parse_args()

@@ -31,6 +31,10 @@ campos_obrigatorios_para_atualizacao = api.model('Atualizaçao de funcionários'
   'horas': fields.Integer(required=True, description='quantidade de horas trabalhadas'),
   'valor': fields.Float(required=True, description='valor da hora de trabalho do funcionário'),
 })
+campos_obrigatorios_para_atualizacao_parcial = api.model('Atualizaçao de funcionários', {
+  'horas': fields.Integer(required=True, description='quantidade de horas trabalhadas'),
+  'valor': fields.Float(required=True, description='valor da hora de trabalho do funcionário'),
+})
 campos_obrigatorios_para_insercao = api.model('Inserção de funcionários', {
   'id': fields.Integer(required=False, readonly=True,
 description='identificador do funcionários'),
@@ -68,7 +72,7 @@ class funcionario(Resource):
         return funcionario, 200, #200: OK
     
     @api.doc(responses={200: 'funcionário substituído'}) #200: OK
-    @api.expect(campos_obrigatorios_para_atualizacao)
+    @api.expect(campos_obrigatorios_para_atualizacao_parcial)
     def patch(self, id):
         aborta_se_o_funcionário_nao_existe(id)
         args = parser.parse_args()
