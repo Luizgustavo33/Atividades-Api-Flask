@@ -188,7 +188,6 @@ class EstoqueMenor(Resource):
             else:
                 continue
                 
-        
         return menor
 class EstoqueTotal(Resource):
     def get(self):
