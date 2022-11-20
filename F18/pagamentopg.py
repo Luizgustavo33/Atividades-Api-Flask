@@ -162,7 +162,6 @@ class PagamentosMaior(Resource):
         return maior
         
     
-    
 class PagamentosMenor(Resource):
     def get(self):
         pagamento = []
