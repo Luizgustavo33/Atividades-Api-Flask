@@ -49,7 +49,6 @@ parser.add_argument('horas', type=int, help='horas trabalhadas')
 parser.add_argument('valor', type=float, help='valor da hora trabalhada')
 
 
-
 # Pessoa:
 # 1) Apresenta um único pessoa.
 # 2) Remove um único pessoa.
